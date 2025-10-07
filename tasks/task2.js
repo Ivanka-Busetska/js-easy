@@ -2,7 +2,13 @@
 //  при цьому пропускаючи всі цифри.
 
 function reverseWithoutNumbers(str) {
-  return str.replace(/[0-9]/g, '').split('').reverse().join('');
+  let filtered = '';
+  for (let i = 0; i < str.length; i++) {
+    if (!(str[i] >= '0' && str[i] <= '9')) {
+      filtered += str[i];
+    }
+  }
+  return filtered.split('').reverse().join('');
 }
 
 console.log(reverseWithoutNumbers("hello123world456")); // Виведе: "dlrowolleh"
